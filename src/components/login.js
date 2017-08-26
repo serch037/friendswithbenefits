@@ -16,9 +16,12 @@ class Login extends Component {
     return(
       <div>
         <form action="">
-          <input type="text" onChange={event => this.setState({email: event.target.value})}/>
-          <input type="text" onChange={event => this.setState({password: event.target.value})}/>
-          <button onClick={this.onSubmit.bind(this)}>Login</button>
+        	<p>Usuario: 
+          	<input type="text" onChange={event => this.setState({email: event.target.value})}/> 
+          	<p>Contrase&ntilde;a: 
+          	<input type="text"onChange={event => this.setState({password: event.target.value})}/>
+          	<button onClick={this.onSubmit.bind(this)}>Login</button>
+          	<a href="/Register"> No tiene cuenta?</a>
         </form>
       </div>
     )
