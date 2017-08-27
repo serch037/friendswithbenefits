@@ -18,22 +18,29 @@
 			<h3 class="center-align">Log In</h3>
 			<div class="divider"></div>
 		<br><br>
+			
 			<h5 class="center-align">User</h5>
-			<input type="text" name="nombreDeUsuario">
+			<input id="name" type="text" placeholder="User Name" value="">
+			
 			<h5 class="center-align">Password</h5>
-			<input type="password" name="contraseña">
+			<input id="pw" type="password" placeholder="Password" value = "">
+			
 			<br>
-			<form method="get" action="paginalogin">
 			<br><br>
- 			<button class="waves-effect waves-light btn-large">Submit</button>
+				
+			 <input class="waves-effect waves-light btn-large" type="button" value="Enter" onClick="check()" /> 
+	
+				
+				
 			<a href="paginacrear usuario"> No tiene cuenta?</a>	
 			
 		</div>
 		<br>
-			
-			
-		
 		<br>
+			
+			
+			
+			
 	</body>
 		
 	<br><br>
@@ -62,7 +69,44 @@
             </div>
           </div>
    </footer>
-</html>
 	
+<script>
+	   	
+var name = document.getElementById('name');
+var pw = document.getElementById('pw');
+
+// storing input from register-form
+function store() {
+    localStorage.setItem('name', name.value);
+    localStorage.setItem('pw', pw.value);
+}
+
+// check if stored data from register-form is equal to entered data in the   login-form
+function check() {
+
+    // stored data from the register-form
+    var storedName = localStorage.getItem('name');
+    var storedPw = localStorage.getItem('pw');
+
+    // entered data from the login-form
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+
+    // check if stored data from register-form is equal to data from login form
+    if(userName.value !== storedName || userPw.value !== storedPw) {
+        alert('ERROR');
+    }else {
+        alert('You are loged in.');
+    }
+}
+		
+		
+		
+</script>
+
+		
+</html>
+
+
 
 		
